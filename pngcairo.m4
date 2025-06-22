@@ -22,14 +22,14 @@ define(`m4_pngcairo_set_dpi',
 ')dnl
 m4_pngcairo_set_dpi(600)dnl
 define(`m4_pngcairo_set_output',
-`set output "| magick - -density m4_pngcairo_dpi() $1"
+`set output "| magick - -density m4_pngcairo_dpi $1"
 ')dnl
 dnl
 dnl A macro to set the terminal to pngcairo
 define(m4_pngcairo,
-`scale = m4_pngcairo_dpi()/96.0
+`scale = m4_pngcairo_dpi/96.0
 set term pngcairo\
-         size (m4_pngcairo_width()*scale)m4_pngcairo_width_unit,(m4_pngcairo_height()*scale)m4_pngcairo_height_unit\
+         size (m4_pngcairo_width*scale)m4_pngcairo_width_unit,(m4_pngcairo_height*scale)m4_pngcairo_height_unit\
          fontscale scale\
          pointscale scale\
          linewidth scale\
